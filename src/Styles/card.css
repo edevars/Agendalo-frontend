@@ -1,0 +1,39 @@
+.cardsGrid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 350px));
+  column-gap: 50px;
+  padding-left: 25px;
+  padding-right: 25px;
+  justify-content: space-evenly;
+  row-gap: 50px;
+}
+
+.card {
+  background: white;
+  width: 100%;
+  color: black;
+}
+
+.margin {
+  padding: 20px;
+}
+
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.Cardbutton{
+  background: #360033;
+  border: none;
+  color: white;
+  font-size: 24px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.Cardbutton:hover{
+  cursor: pointer;
+}
