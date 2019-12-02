@@ -38,11 +38,6 @@ nav{
     justify-content: center;
 }
 
-.divSepTitle{
-    text-align: center;
-    font-size: 40px;
-    color:white;
-}
 .hero{
     position: relative;
     background: #eeeeee;
@@ -100,77 +95,5 @@ nav{
     object-fit: cover; /*fill contain none cover scale-down*/
     position: absolute;
     z-index: 0;
-}
-
-.heroGrid{
-    display: grid;
-    height: 67vh; 
-            background:
-                radial-gradient(circle at 0% 50%, rgba(96, 16, 48, 0) 9px, #613 10px, rgba(96, 16, 48, 0) 11px) 0px 10px,
-                radial-gradient(at 100% 100%,      rgba(96, 16, 48, 0) 9px, #613 10px, rgba(96, 16, 48, 0) 11px),#8a3;
-                background-size: 20px 20px;
-    grid-template: 1fr / 1fr 1fr 1fr 1fr;
-    gap: 40px;
-    grid-template-areas: "cuadro1 cuadro2 cuadro3 cuadro4";
-}
-
-.cuadro1Child{
-    grid-area: cuadro1;
-    background: #B993D6;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #8CA6DB, #B993D6);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #8CA6DB, #B993D6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    margin: 20px 20px; 
-    border:solid;
-}
-
-.cuadro2Child{
-    grid-area: cuadro2;
-    background: #B993D6;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #8CA6DB, #B993D6);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #8CA6DB, #B993D6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    margin: 20px 20px;
-    border:solid; 
-}
-
-.cuadro3Child{
-    grid-area: cuadro3;
-    background: #B993D6;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #8CA6DB, #B993D6);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #8CA6DB, #B993D6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    margin: 20px 20px;
-    border:solid;
-}
-
-.cuadro4Child{
-    grid-area: cuadro4;
-    background: #B993D6;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #8CA6DB, #B993D6);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #8CA6DB, #B993D6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    margin: 20px 20px;
-    border:solid;
-}
-
-.imagenCard{
-    width: 100%;
-    height: 100;
-    object-fit: contain;
-}
-
-@media screen and (max-width: 850px){ /*Breakpoint*/
-    .heroGrid{
-        width: 100%;
-        height: auto; 
-        background: #bdf478;
-        grid-template: 1fr 1fr 1fr 1fr / 1fr;
-        row-gap: 30px;
-        column-gap: 0px;
-        gap: 40px;
-        grid-template-areas: "cuadro1"
-                             "cuadro2" 
-                             "cuadro3"
-                             "cuadro4";
-    }
-    
-   
 }
 

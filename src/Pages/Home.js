@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import "../Styles/Home.css";
-import "../Styles/GridVert.css";
 import "../Styles/global.css";
 import Layout from '../Components/Layout'
 
@@ -27,9 +26,6 @@ class Home extends Component {
           </div>
         </div>
         
-        <div className="divSeparador">
-          <h2 className="divSepTitle">Destinos Populares</h2>
-        </div>
 
   
        
