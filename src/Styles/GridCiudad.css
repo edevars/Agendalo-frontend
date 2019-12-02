@@ -1,0 +1,106 @@
+.heroGridCD{
+    display: grid;
+    width: 100%;
+    height: Calc(100vh - 110px);
+        background:
+                radial-gradient(circle at 0% 50%, rgba(96, 16, 48, 0) 9px, #613 10px, rgba(96, 16, 48, 0) 11px) 0px 10px,
+                radial-gradient(at 100% 100%,      rgba(96, 16, 48, 0) 9px, #613 10px, rgba(96, 16, 48, 0) 11px),#8a3;
+                background-size: 20px 20px;
+    grid-template: 1fr 1fr / 1fr 1fr;
+    grid-template-areas: "cuadro1CD cuadro2CD"
+                         "cuadro1CD cuadro3CD";
+}
+
+.cuadro1ChildCD{
+    grid-area: cuadro1CD;
+    background-color:black;
+    margin: 25px 25px; 
+}
+
+.cuadro2ChildCD{
+    grid-area: cuadro2CD;
+    background-color: white;
+    margin: 25px 25px; 
+    padding: 2px 2px;
+    border: solid; 
+    height: 35vh;
+}
+
+.cuadro3ChildCD{
+    grid-area: cuadro3CD;
+    background-color:white;
+    margin-top: 0;
+    margin-bottom: 25px;
+    margin-right: 25px;
+    margin-left: 25px;
+    padding: 15px 10px;
+    border: solid;
+}
+
+.cuadro4ChildCD{
+    grid-area: cuadro4CD;
+    background-color:red;
+    margin: 25px 25px; 
+    padding: 2px 2px;
+}
+
+.imagenCardCD{
+    width: 100%;
+    height: 34.5vh;
+    object-fit: cover;
+}
+
+.iframeCD{ /*video*/
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.parrafoCD{
+    text-align: justify;
+    font-size: 25px;
+    font-family: 'Signika', sans-serif;
+}
+
+.h2CD{
+    margin: 32px 2px;
+    text-align: center;
+    font-size: 100px;
+}
+
+.h3CD{
+    margin-right: 90px;
+    text-align: right;
+    font-size: 30px;
+}
+
+.heroCD{
+    position: relative;
+    background: #eeeeee;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    /*Se calcula el 100 de alto de tu pantalla - 110 px que miden tus navbars*/
+}
+
+.maskCD{
+    position: absolute;
+    background: #360033;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #0b8793, #360033);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #0b8793, #360033); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */    
+    opacity: .5;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.heroTitleContCD{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+}
