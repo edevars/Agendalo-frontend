@@ -1,5 +1,6 @@
 import React from "react";
 import "../Styles/card.css";
+import { Link } from "react-router-dom";
 
 const Cards = ({ place }) => {
   return (
@@ -9,7 +10,9 @@ const Cards = ({ place }) => {
         <h4>{place.name}</h4>
         <p>{place.countryName}</p>
         <p>{place.description}</p>
-        <button className="Cardbutton">Reservar ya</button>
+        <Link to={`/reservar/${place._id}`}>
+          <button className="Cardbutton">Reservar ya</button>
+        </Link>
       </div>
     </div>
   );

@@ -24,7 +24,7 @@ class Home extends Component {
           <h6 className="navBarTitle">Agéndalo</h6>
         </nav>
         <nav className="nav2">
-          <h6 className="navBarSubtitle"> Home </h6>
+          <h6 className="navBarSubtitle"> Destinos </h6>
         </nav>
 
         <div className="hero">
@@ -40,31 +40,8 @@ class Home extends Component {
         </div>
 
         <div className="NewPlaces">
-          <h3 className="Title">Nuevos lugares por descubir!</h3>
-          <CardsGrid places={this.state.places.slice(0,4)}></CardsGrid>
-        </div>
-        <div className="Welcome">
-          <div>
-            <h3 className="Title">No esperes mas</h3>
-            <img
-              src="https://i.etsystatic.com/10919371/r/il/b7fc54/1567098053/il_570xN.1567098053_h1sa.jpg"
-              alt=""
-              className="plane"
-            />
-          </div>
-          <p className="welcomeMessage">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores hic
-            tempora dolorum minus dolor magni voluptas a necessitatibus, in
-            cupiditate possimus voluptatem nemo? Facilis aliquam quia velit
-            debitis saepe veniam.
-          </p>
-        </div>
-        <div className="NewPlaces">
-          <h3 className="Title">Lo mas visitado</h3>
-          <CardsGrid places={this.state.places.slice(4,8)}></CardsGrid>
-        </div>
-        <div className="callToAction">
-          <h3 className="TitleCall">Reserva Ya</h3>
+          <h3 className="Title">Elige entre cientos de destinos!</h3>
+          <CardsGrid places={this.state.places}></CardsGrid>
         </div>
       </Layout>
     );
