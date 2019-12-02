@@ -83,3 +83,21 @@
     align-content: center;
     justify-content: center;
 }
+
+.login{
+    background: #360033;
+    border: none;
+    color: white;
+    font-size: 18px;
+    margin-right: 15px;
+    padding: 5px;
+}
+
+.signup{
+    background: #734b6d;
+    border: none;
+    color: white;
+    font-size: 18px;
+    margin-right: 15px;
+    padding: 5px;
+}

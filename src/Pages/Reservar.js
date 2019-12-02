@@ -3,8 +3,11 @@ import axios from "axios";
 import "../Styles/Reservaciones.css";
 import "../Styles/global.css";
 import Layout from "../Components/Layout";
+import { Redirect } from "react-router";
+import { connect } from "react-redux";
+import * as userActions from "../Actions/userActions";
 
-class Home extends Component {
+class Reservar extends Component {
   state = {
     place: {
       availableSits: 0,
@@ -25,9 +28,9 @@ class Home extends Component {
   }
 
   render() {
-    
     return (
       <Layout>
+        {this.props.user.token === "" && <Redirect push to="/" />}
         <nav>
           <h6 className="navBarTitle">Agéndalo</h6>
         </nav>
@@ -41,7 +44,9 @@ class Home extends Component {
             <h2 className="title">Viaja a {this.state.place.name}</h2>
             <p className="description"></p>
             {this.state.place.description}
-            <p className="sitios">Sitios disponibles {this.state.place.availableSits}</p>
+            <p className="sitios">
+              Sitios disponibles {this.state.place.availableSits}
+            </p>
             <p className="costo">$ {this.state.place.cost} por persona</p>
             <button className="button">Reservar mi lugar</button>
           </div>
@@ -51,4 +56,6 @@ class Home extends Component {
   }
 }
 
-export default Home;
+const mapStateToProps = ({ userReducer }) => userReducer;
+
+export default connect(mapStateToProps, userActions)(Reservar);

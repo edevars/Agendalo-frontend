@@ -17,7 +17,6 @@ class Home extends Component {
   }
 
   render() {
-    console.log(this.state.places);
     return (
       <Layout>
         <nav>
