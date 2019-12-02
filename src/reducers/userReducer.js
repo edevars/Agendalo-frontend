@@ -13,14 +13,14 @@ const INITIAL_STATE = {
 export default (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case USER_LOGIN:
-      return { ...state, user: action.payload };
+      return { ...state, user: action.payload, error: "" };
 
     case USER_SIGNUP:
       return state;
 
     case USER_ERROR:
       return { ...state, error: action.payload };
-      
+
     default:
       return state;
   }

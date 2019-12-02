@@ -52,21 +52,29 @@ class Reservar extends Component {
               className="button"
               onClick={async event => {
                 event.preventDefault();
-                const newSist = this.state.place.availableSits - 1;
-                console.log(
-                  newSist,
-                  `http://localhost:8000/api/places/${this.props.match.params.placeId}`
-                );
 
-                const respone = await axios({
-                  url: `http://localhost:8000/api/places/${this.props.match.params.placeId}`,
-                  method: "PUT",
-                  data: {
-                    availableSits: newSist
+                try {
+                  const newSits = this.state.place.availableSits - 1;
+
+                  const response = await axios({
+                    url: `http://localhost:8000/api/places/${this.props.match.params.placeId}`,
+                    method: "PUT",
+                    data: {
+                      availableSits: newSits
+                    }
+                  });
+
+                  if (response.status === 200) {
+                    this.setState({
+                      place: {
+                        ...this.state.place,
+                        availableSits: newSits
+                      }
+                    });
                   }
-                });
-
-                console.log(respone);
+                } catch (error) {
+                  console.error(error);
+                }
               }}
             >
               Reservar mi lugar

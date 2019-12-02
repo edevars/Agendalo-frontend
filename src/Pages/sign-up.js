@@ -4,7 +4,7 @@ import "react-toastify/dist/ReactToastify.css";
 import * as userActions from "../Actions/userActions";
 import { connect } from "react-redux";
 
-import "../Styles/signin.css";
+import "../Styles/forms.css";
 import "../Styles/global.css";
 import Layout from "../Components/Layout";
 import { Redirect } from "react-router";
@@ -58,11 +58,11 @@ class SignIn extends Component {
           <h6 className="navBarSubtitle"> Sign up </h6>
         </nav>
         <form
-          onSubmit={event => {
+          onSubmit={async event => {
             event.preventDefault();
             const { name, username, password } = this.state.form;
 
-            this.props.userSignUp(name, username, password);
+            await this.props.userSignUp(name, username, password);
 
             if (this.props.error) {
               this.notifyErrorAuthentication(
@@ -73,6 +73,11 @@ class SignIn extends Component {
             }
           }}
         >
+          <img
+            src="https://cdn2.iconfinder.com/data/icons/essenstial-ultimate-ui/64/avatar-512.png"
+            alt="avatar"
+            className="avatar"
+          />
           <input
             onChange={this.handleChange}
             name="name"
@@ -91,7 +96,7 @@ class SignIn extends Component {
             type="password"
             placeholder="Password"
           />
-          <input type="submit" value="Sign up" />
+          <input type="submit" className="formButton" value="Sign up" />
         </form>
       </Layout>
     );

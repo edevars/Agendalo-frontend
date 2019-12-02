@@ -51,14 +51,12 @@ export const userSignUp = (name, email, password) => async dispatch => {
     });
 
     if (response.status === 201) {
-      dispatch({
-        type: USER_SIGNUP
-      }).then(() => {
-        dispatch(userLogin(email, password));
-      });
+      dispatch(userLogin(email, password)).then(() =>
+        dispatch({
+          type: USER_SIGNUP
+        })
+      );
     }
-
-    // dispatch(userLogin(email, password));
   } catch (error) {
     dispatch({
       type: USER_ERROR,

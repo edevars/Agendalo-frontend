@@ -1,0 +1,46 @@
+form {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  background: #c33764; /* fallback for old browsers */
+  border-radius: 15px;
+  background: -webkit-linear-gradient(
+    to top,
+    #1d2671,
+    #c33764
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to top,
+    #1d2671,
+    #c33764
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  padding: 30px;
+  margin: 150px auto;
+}
+
+input {
+  margin-top: 20px;
+  font-size: 18px;
+  padding: 5px 15px;
+  border: none;
+  border-radius: 5px;
+}
+
+.avatar{
+  width: 200px;
+  height: 200px;
+  margin: 0 auto;
+}
+
+.formButton {
+  margin: 20px auto;
+  background: white;
+  color: #c33764;
+  font-weight: bold;
+  width: 100px;
+}
+
+.formButton:hover {
+  cursor: pointer;
+}
