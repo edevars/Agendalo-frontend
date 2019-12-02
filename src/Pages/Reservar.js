@@ -48,7 +48,29 @@ class Reservar extends Component {
               Sitios disponibles {this.state.place.availableSits}
             </p>
             <p className="costo">$ {this.state.place.cost} por persona</p>
-            <button className="button">Reservar mi lugar</button>
+            <button
+              className="button"
+              onClick={async event => {
+                event.preventDefault();
+                const newSist = this.state.place.availableSits - 1;
+                console.log(
+                  newSist,
+                  `http://localhost:8000/api/places/${this.props.match.params.placeId}`
+                );
+
+                const respone = await axios({
+                  url: `http://localhost:8000/api/places/${this.props.match.params.placeId}`,
+                  method: "PUT",
+                  data: {
+                    availableSits: newSist
+                  }
+                });
+
+                console.log(respone);
+              }}
+            >
+              Reservar mi lugar
+            </button>
           </div>
         </div>
       </Layout>

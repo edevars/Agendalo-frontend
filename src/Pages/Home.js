@@ -40,7 +40,7 @@ class Home extends Component {
 
         <div className="NewPlaces">
           <h3 className="Title">Nuevos lugares por descubir!</h3>
-          <CardsGrid places={this.state.places.slice(0,4)}></CardsGrid>
+          <CardsGrid places={this.state.places.slice(0, 4)}></CardsGrid>
         </div>
         <div className="Welcome">
           <div>
@@ -52,15 +52,15 @@ class Home extends Component {
             />
           </div>
           <p className="welcomeMessage">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores hic
-            tempora dolorum minus dolor magni voluptas a necessitatibus, in
-            cupiditate possimus voluptatem nemo? Facilis aliquam quia velit
-            debitis saepe veniam.
+            Bienvenido a Agéndalo, un sitio donde puedes visualizar los países
+            más visitados en todo el mundo. Registrate y obten acceso a todos
+            los hoteles en los lugares mas exclusivos. Agéndalo: tu habitación
+            perfecta a sólo un click de distancia.
           </p>
         </div>
         <div className="NewPlaces">
           <h3 className="Title">Lo mas visitado</h3>
-          <CardsGrid places={this.state.places.slice(4,8)}></CardsGrid>
+          <CardsGrid places={this.state.places.slice(4, 8)}></CardsGrid>
         </div>
         <div className="callToAction">
           <h3 className="TitleCall">Reserva Ya</h3>

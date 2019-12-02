@@ -6,7 +6,7 @@ const CardsGrid = ({ places }) => {
   return (
     <div className="cardsGrid">
       {places.map(place => (
-        <Card key={place.id} place={place}></Card>
+        <Card key={place._id} place={place}></Card>
       ))}
     </div>
   );

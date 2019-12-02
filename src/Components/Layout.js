@@ -47,14 +47,12 @@ class Layout extends Component {
           </nav>
           {this.props.user.token === "" && (
             <nav className="navMenu">
-              <button className="login" onClick={(event) => {
-                
-              }}>
-                Iniciar Sesion
-              </button>
-              <button className="signup">
-                Crear cuenta
-              </button>
+              <Link to="/sign-in">
+                <button className="login">Iniciar Sesion</button>
+              </Link>
+              <Link to="/sign-up">
+                <button className="signup">Crear cuenta</button>
+              </Link>
             </nav>
           )}
         </div>

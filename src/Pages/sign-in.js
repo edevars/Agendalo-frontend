@@ -11,8 +11,7 @@ class SignIn extends Component {
     form: {
       username: "",
       password: ""
-    },
-    logged: false
+    }
   };
 
   handleChange = e => {

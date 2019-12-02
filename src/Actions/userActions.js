@@ -1,11 +1,10 @@
 import axios from "axios";
-import { USER_LOGIN } from "../types/userTypes";
+import { USER_LOGIN, USER_ERROR, USER_SIGNUP } from "../types/userTypes";
 
-export const userLogin = (email, password) => async (dispatch, getState) => {
-  const { user } = getState().userReducer;
-
+export const userLogin = (email, password) => async dispatch => {
+  console.log("quiere hacer login con:", email, password);
   try {
-    const { data } = await axios({
+    const response = await axios({
       url: "http://localhost:8000/api/auth/sign-in",
       method: "post",
       data: {
@@ -18,8 +17,9 @@ export const userLogin = (email, password) => async (dispatch, getState) => {
       }
     });
 
+    const { data } = response;
+
     const newUser = {
-      ...user,
       id: data.user.id,
       email: data.user.email,
       name: data.user.name,
@@ -32,8 +32,37 @@ export const userLogin = (email, password) => async (dispatch, getState) => {
     });
   } catch (error) {
     dispatch({
-      type: USER_LOGIN,
-      payload: user
+      type: USER_ERROR,
+      payload: error.message
+    });
+  }
+};
+
+export const userSignUp = (name, email, password) => async dispatch => {
+  try {
+    const response = await axios({
+      url: "http://localhost:8000/api/auth/sign-up",
+      method: "post",
+      data: {
+        name,
+        email,
+        password
+      }
+    });
+
+    if (response.status === 201) {
+      dispatch({
+        type: USER_SIGNUP
+      }).then(() => {
+        dispatch(userLogin(email, password));
+      });
+    }
+
+    // dispatch(userLogin(email, password));
+  } catch (error) {
+    dispatch({
+      type: USER_ERROR,
+      payload: error.message
     });
   }
 };
